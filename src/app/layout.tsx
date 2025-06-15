@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster";
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'PortfolioFlow',
-  description: 'A personal portfolio website with AI content assistance.',
+  title: 'HARIHARAN SP - Portfolio',
+  description: 'Personal portfolio of Hariharan SP, showcasing projects and skills in ECE, Data Science, AI, and Robotics.',
 };
 
 export default function RootLayout({

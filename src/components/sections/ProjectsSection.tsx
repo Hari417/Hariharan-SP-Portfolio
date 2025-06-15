@@ -2,45 +2,33 @@ import { Briefcase } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import type { ProjectType } from "@/types";
 
-const mockProjects: ProjectType[] = [
+const userProjects: ProjectType[] = [
   {
     id: "1",
-    title: "E-commerce Platform",
-    description: "A full-featured e-commerce platform with user authentication, product listings, cart functionality, and payment integration. Built with modern web technologies.",
+    title: "All-Purpose Drone for Disaster Response",
+    description: "Engineered a drone for disaster conditions using ML/DL to identify and locate humans. Features a modular design for real-time analysis and monitoring.",
     imageUrl: "https://placehold.co/600x400.png",
-    liveLink: "#",
-    githubLink: "#",
-    tags: ["Next.js", "TypeScript", "Stripe", "Firebase"],
-    dataAiHint: "online shopping"
+    dataAiHint: "drone disaster",
+    githubLink: "#", // Please update with your actual GitHub repository link
+    tags: ["Machine Learning", "Deep Learning", "Python", "Computer Vision", "Embedded Systems"],
   },
   {
     id: "2",
-    title: "Task Management App",
-    description: "A collaborative task management application designed to help teams organize, track, and manage their work efficiently. Features real-time updates and a clean UI.",
+    title: "Smart Camera System",
+    description: "Built a smart camera with Deep Learning algorithms for user-defined tasks like security and object recognition, featuring real-time processing capabilities.",
     imageUrl: "https://placehold.co/600x400.png",
-    liveLink: "#",
-    githubLink: "#",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    dataAiHint: "productivity tool"
+    dataAiHint: "smart camera",
+    githubLink: "#", // Please update with your actual GitHub repository link
+    tags: ["Deep Learning", "Python", "Computer Vision", "Object Recognition"],
   },
   {
     id: "3",
-    title: "Personal Blog",
-    description: "A statically generated personal blog built with a headless CMS for content management. Optimized for performance and SEO.",
+    title: "TARS (Personal AI Assistant)",
+    description: "Ongoing AI assistant using Google Speech-to-Text, DeepSeek, and Whisper for voice; YOLO and object tracking for vision. Hardware: Raspberry Pi, servos, depth cameras.",
     imageUrl: "https://placehold.co/600x400.png",
-    githubLink: "#",
-    tags: ["Gatsby", "GraphQL", "Contentful", "Markdown"],
-    dataAiHint: "writing publishing"
-  },
-   {
-    id: "4",
-    title: "AI Powered Chatbot",
-    description: "An intelligent chatbot leveraging natural language processing to provide customer support and answer user queries on a website.",
-    imageUrl: "https://placehold.co/600x400.png",
-    liveLink: "#",
-    githubLink: "#",
-    tags: ["Python", "Dialogflow", "Flask", "React"],
-    dataAiHint: "artificial intelligence"
+    dataAiHint: "ai assistant",
+    githubLink: "#", // Please update with your actual GitHub repository link for this ongoing project
+    tags: ["AI", "Python", "C++", "Raspberry Pi", "YOLO", "NLP", "Robotics"],
   },
 ];
 
@@ -52,11 +40,11 @@ export default function ProjectsSection() {
           <Briefcase className="h-12 w-12 mx-auto mb-4 text-primary" />
           <h2 className="text-3xl font-headline font-bold sm:text-4xl text-primary dark:text-primary-foreground/90">My Projects</h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            A selection of my recent work, showcasing my skills and creativity.
+            A selection of my work, showcasing my skills in AI, robotics, and software development.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {mockProjects.map((project) => (
+          {userProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>

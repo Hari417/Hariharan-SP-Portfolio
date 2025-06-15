@@ -13,7 +13,7 @@ export default function ContactSection() {
           <MailIcon className="h-12 w-12 mx-auto mb-4 text-primary" />
           <h2 className="text-3xl font-headline font-bold sm:text-4xl text-primary dark:text-primary-foreground/90">Get In Touch</h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Have a project in mind or just want to say hi? Feel free to reach out.
+            Have a project in mind or just want to connect? Feel free to reach out.
           </p>
         </div>
 
@@ -25,17 +25,19 @@ export default function ContactSection() {
             <CardContent className="space-y-6">
               <div className="flex items-center space-x-3">
                 <MailIcon className="h-6 w-6 text-accent" />
-                <Link href="mailto:your.email@example.com" className="hover:text-primary transition-colors">
-                  your.email@example.com
+                <Link href="mailto:hariharansp2050@gmail.com" className="hover:text-primary transition-colors">
+                  hariharansp2050@gmail.com
                 </Link>
               </div>
               <div className="flex items-center space-x-3">
                 <PhoneCall className="h-6 w-6 text-accent" />
-                <span>+1 (555) 123-4567</span>
+                <Link href="tel:+918939738179" className="hover:text-primary transition-colors">
+                  +91 8939738179
+                </Link>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-6 w-6 text-accent" />
-                <span>Your City, Country</span>
+                <span>Chennai, India</span>
               </div>
             </CardContent>
           </Card>
@@ -45,7 +47,7 @@ export default function ContactSection() {
               <CardTitle className="font-headline text-2xl text-primary dark:text-primary-foreground/90">Send a Message</CardTitle>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form className="space-y-4" action="https://formspree.io/f/yourFormspreeID" method="POST"> {/* Replace yourFormspreeID with your actual Formspree endpoint ID */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-1">Your Name</label>
                   <Input type="text" id="name" name="name" placeholder="John Doe" required />

@@ -8,10 +8,10 @@ export default function HeroSection() {
       <div className="container px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-headline font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-primary dark:text-primary-foreground/90">
-            Welcome to PortfolioFlow
+            HARIHARAN SP
           </h1>
           <p className="mt-6 text-lg leading-8 text-foreground/80 dark:text-foreground/70 sm:text-xl">
-            Crafting digital experiences with passion and precision. Discover my projects and skills.
+            Dual degree ECE & Data Science student passionate about AI, robotics, and embedded systems. Turning complex challenges into innovative solutions.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button size="lg" asChild className="shadow-lg hover:shadow-primary/30 transition-shadow">

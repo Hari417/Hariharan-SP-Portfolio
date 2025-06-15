@@ -19,7 +19,7 @@ export default function Header() {
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Code2 className="h-6 w-6 text-primary" />
           <span className="font-bold font-headline text-xl sm:inline-block">
-            PortfolioFlow
+            HARIHARAN SP
           </span>
         </Link>
         <nav className="flex flex-1 items-center space-x-1 sm:space-x-2 md:space-x-4">

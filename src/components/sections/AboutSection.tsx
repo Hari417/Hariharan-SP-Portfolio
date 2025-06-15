@@ -1,14 +1,20 @@
-import { User, Brain, Code, Zap, Server, Database } from "lucide-react";
+import { User, Brain, Code, Zap, Server, Database, Terminal, Cpu, Layers, BarChart2, Target, Lightbulb, Rocket } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const skills = [
-  { name: "React", icon: <Code className="h-6 w-6 text-primary" /> },
-  { name: "Next.js", icon: <Zap className="h-6 w-6 text-primary" /> },
-  { name: "TypeScript", icon: <Code className="h-6 w-6 text-primary" /> },
-  { name: "Node.js", icon: <Server className="h-6 w-6 text-primary" /> },
-  { name: "Tailwind CSS", icon: <Zap className="h-6 w-6 text-primary" /> },
-  { name: "GenAI Integration", icon: <Brain className="h-6 w-6 text-primary" /> },
-  { name: "Firebase", icon: <Database className="h-6 w-6 text-primary" /> },
+  { name: "Python", icon: <Code className="h-6 w-6 text-primary" /> },
+  { name: "C & C++", icon: <Code className="h-6 w-6 text-primary" /> },
+  { name: "Linux OS (Basics)", icon: <Terminal className="h-6 w-6 text-primary" /> },
+  { name: "CUDA (Learning)", icon: <Cpu className="h-6 w-6 text-primary" /> },
+  { name: "Data Analysis (Pandas, Scikit-learn, Matplotlib)", icon: <BarChart2 className="h-6 w-6 text-primary" /> },
+  { name: "Machine Learning", icon: <Brain className="h-6 w-6 text-primary" /> },
+  { name: "Deep Learning", icon: <Layers className="h-6 w-6 text-primary" /> },
+];
+
+const interests = [
+  { name: "Embedded Systems for Robotics", icon: <Rocket className="h-6 w-6 text-primary" /> },
+  { name: "AI-Powered Smart Solutions", icon: <Lightbulb className="h-6 w-6 text-primary" /> },
+  { name: "AI Model Development & Optimization", icon: <Target className="h-6 w-6 text-primary" /> },
 ];
 
 export default function AboutSection() {
@@ -18,32 +24,42 @@ export default function AboutSection() {
         <div className="text-center mb-12">
           <User className="h-12 w-12 mx-auto mb-4 text-primary" />
           <h2 className="text-3xl font-headline font-bold sm:text-4xl text-primary dark:text-primary-foreground/90">About Me</h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            A brief introduction to who I am, my passion for development, and my journey.
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-1 gap-12 items-start">
           <Card className="shadow-lg">
             <CardContent className="p-6">
               <p className="text-lg mb-4 leading-relaxed">
-                Hello! I&apos;m a passionate and creative software developer with a knack for building intuitive and performant web applications. My journey into the world of code started with a fascination for how technology can solve real-world problems and bring ideas to life.
+                I’m a pre-final year student at St. Joseph&apos;s College of Engineering, pursuing a dual degree in Electronics and Communication Engineering (ECE) and a Bachelor of Science in Data Science from IIT Madras.
               </p>
               <p className="text-lg leading-relaxed">
-                I thrive in collaborative environments and enjoy tackling complex challenges. Continuously learning and exploring new technologies is a core part of my professional growth. When I&apos;m not coding, I enjoy [Your Hobby/Interest Here], which helps me stay creative and balanced.
+                Experienced in embedded systems, machine learning, and data analysis, with hands-on expertise in microcontrollers like Arduino and Raspberry Pi. Passionate about leveraging AI and robotics to solve real-world challenges.
               </p>
             </CardContent>
           </Card>
 
-          <div>
-            <h3 className="text-2xl font-headline font-semibold mb-6 text-center md:text-left text-primary dark:text-primary-foreground/90">My Skills</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {skills.map((skill) => (
-                <Card key={skill.name} className="text-center p-4 hover:shadow-lg transition-shadow">
-                  <div className="flex justify-center mb-2">{skill.icon}</div>
-                  <p className="font-medium">{skill.name}</p>
-                </Card>
-              ))}
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div>
+              <h3 className="text-2xl font-headline font-semibold mb-6 text-center md:text-left text-primary dark:text-primary-foreground/90">My Skills</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {skills.map((skill) => (
+                  <Card key={skill.name} className="text-center p-4 hover:shadow-lg transition-shadow">
+                    <div className="flex justify-center mb-2">{skill.icon}</div>
+                    <p className="font-medium text-sm">{skill.name}</p>
+                  </Card>
+                ))}
+              </div>
+            </div>
+             <div>
+              <h3 className="text-2xl font-headline font-semibold mb-6 text-center md:text-left text-primary dark:text-primary-foreground/90">Areas of Interest</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-1 gap-4">
+                {interests.map((interest) => (
+                  <Card key={interest.name} className="p-4 hover:shadow-lg transition-shadow flex items-center space-x-3">
+                    <div className="flex-shrink-0">{interest.icon}</div>
+                    <p className="font-medium text-sm">{interest.name}</p>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </div>
