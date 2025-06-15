@@ -1,11 +1,22 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="min-h-[calc(100vh-3.5rem)] flex items-center justify-center text-center bg-gradient-to-br from-background to-secondary dark:to-card py-12 md:py-20">
+    <section id="hero" className="min-h-[calc(100vh-3.5rem)] flex flex-col items-center justify-center text-center bg-gradient-to-br from-background to-secondary dark:to-card pt-12 md:pt-20">
       <div className="container px-4 md:px-6">
+        <div className="relative w-full h-auto max-w-5xl mx-auto mb-8 md:mb-12 aspect-[3/1] overflow-hidden rounded-lg shadow-xl">
+          <Image
+            src="https://placehold.co/1200x400.png"
+            alt="Hariharan SP Banner"
+            layout="fill"
+            objectFit="cover"
+            priority
+            data-ai-hint="workspace banner"
+          />
+        </div>
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-headline font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-primary dark:text-primary-foreground/90">
             HARIHARAN SP
