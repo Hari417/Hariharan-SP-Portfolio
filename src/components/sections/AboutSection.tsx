@@ -116,19 +116,24 @@ export default function AboutSection() {
                           ))}
                       </ul>
                       {selectedCert && (
-                        <DialogContent className="max-w-3xl">
+                        <DialogContent className="max-w-3xl h-auto">
                           <DialogHeader>
                             <DialogTitle className="font-headline">{selectedCert.name}</DialogTitle>
                           </DialogHeader>
-                          <div className="relative aspect-[8.5/11] w-full mt-4">
-                            <Image 
-                              src={selectedCert.imageUrl} 
-                              alt={`Certificate for ${selectedCert.name}`} 
-                              layout="fill"
-                              objectFit="contain"
-                              data-ai-hint={selectedCert.dataAiHint}
+                          <div className="relative w-full h-full mt-4 flex justify-center items-center">
+                            <Image
+                                src={selectedCert.imageUrl}
+                                alt={`Certificate for ${selectedCert.name}`}
+                                width={850}
+                                height={1100}
+                                style={{
+                                    maxWidth: '100%',
+                                    height: 'auto',
+                                    objectFit: 'contain',
+                                }}
+                                data-ai-hint={selectedCert.dataAiHint}
                             />
-                          </div>
+                           </div>
                         </DialogContent>
                       )}
                     </Dialog>
