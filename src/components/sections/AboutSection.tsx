@@ -1,5 +1,6 @@
-import { User, Brain, Code, Zap, Server, Database, Terminal, Cpu, Layers, BarChart2, Target, Lightbulb, Rocket } from "lucide-react";
+import { User, Brain, Code, Terminal, Cpu, Layers, BarChart2, Target, Lightbulb, Rocket, Briefcase, Award } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const skills = [
   { name: "Python", icon: <Code className="h-6 w-6 text-primary" /> },
@@ -16,6 +17,30 @@ const interests = [
   { name: "AI-Powered Smart Solutions", icon: <Lightbulb className="h-6 w-6 text-primary" /> },
   { name: "AI Model Development & Optimization", icon: <Target className="h-6 w-6 text-primary" /> },
 ];
+
+const internships = [
+    {
+        company: "Candela Technologies, Chennai",
+        role: "Automation Testing Robot Development",
+        description: "Developed an automation testing robot (line-following + digital twin) using C++, Python, and KiCAD for custom PCB design. Technologies included Firebase Studio, GitHub, OTA remote control, and remote database logging.",
+        duration: "July 2024 (ongoing)"
+    },
+    {
+        company: "Chennai Port Trust",
+        role: "Electronics Systems Study",
+        description: "Studied the working of Doppler weather radar and port traffic guidance electronic systems. Gained exposure to radar simulation, vessel navigation electronics, and port-side communication infrastructure.",
+        duration: "July 2024"
+    }
+]
+
+const certifications = [
+    "IBM: Getting Started with GIT and GitHub",
+    "IBM: Data Analysis with Python",
+    "IBM: Machine Learning with Python",
+    "IITM: Foundational Level in Programming & Data Science",
+    "Infosys Springboard: Python Programming -01"
+]
+
 
 export default function AboutSection() {
   return (
@@ -37,6 +62,43 @@ export default function AboutSection() {
               </p>
             </CardContent>
           </Card>
+
+          <div>
+            <h3 className="text-2xl font-headline font-semibold mb-6 text-center md:text-left text-primary dark:text-primary-foreground/90 flex items-center justify-center md:justify-start">
+              <Briefcase className="h-7 w-7 mr-3" /> Internships
+            </h3>
+            <div className="space-y-6">
+                {internships.map((internship, index) => (
+                    <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow">
+                        <CardHeader>
+                            <CardTitle className="flex justify-between items-start">
+                                <span className="font-headline text-xl text-primary dark:text-primary-foreground/90">{internship.company}</span>
+                                <Badge variant="secondary">{internship.duration}</Badge>
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <h4 className="font-semibold mb-2">{internship.role}</h4>
+                            <p className="text-muted-foreground">{internship.description}</p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-2xl font-headline font-semibold mb-6 text-center md:text-left text-primary dark:text-primary-foreground/90 flex items-center justify-center md:justify-start">
+              <Award className="h-7 w-7 mr-3" /> Certifications
+            </h3>
+            <Card className="shadow-lg">
+                <CardContent className="p-6">
+                    <ul className="list-disc list-inside space-y-2">
+                        {certifications.map((cert, index) => (
+                            <li key={index} className="text-muted-foreground">{cert}</li>
+                        ))}
+                    </ul>
+                </CardContent>
+            </Card>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-start">
             <div>
