@@ -4,6 +4,15 @@ import type { ProjectType } from "@/types";
 
 const userProjects: ProjectType[] = [
   {
+    id: "4",
+    title: "Automation Testing Robot",
+    description: "Developed an automation testing robot (line-following + digital twin) using C++, Python, and KiCAD for custom PCB design. Technologies included Firebase Studio, GitHub, OTA remote control, and remote database logging.",
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "robotics automation",
+    githubLink: "#", // Please update with your actual GitHub repository link
+    tags: ["C++", "Python", "KiCAD", "Firebase", "Robotics", "Embedded Systems"],
+  },
+  {
     id: "1",
     title: "All-Purpose Drone for Disaster Response",
     description: "Engineered a drone for disaster conditions using ML/DL to identify and locate humans. Features a modular design for real-time analysis and monitoring.",
