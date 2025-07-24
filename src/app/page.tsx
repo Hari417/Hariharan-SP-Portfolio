@@ -3,7 +3,6 @@ import Footer from "@/components/common/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
-import AiAssistantSection from "@/components/sections/AiAssistantSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 export default function HomePage() {
@@ -14,7 +13,6 @@ export default function HomePage() {
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
-        <AiAssistantSection />
         <ContactSection />
       </main>
       <Footer />
