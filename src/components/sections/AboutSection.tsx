@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 import { User, Brain, Code, Terminal, Cpu, Layers, BarChart2, Target, Lightbulb, Rocket, Briefcase, Award } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 const skills = [
   { name: "Python", icon: <Code className="h-6 w-6 text-primary" /> },
@@ -34,15 +40,17 @@ const internships = [
 ]
 
 const certifications = [
-    "IBM: Getting Started with GIT and GitHub",
-    "IBM: Data Analysis with Python",
-    "IBM: Machine Learning with Python",
-    "IITM: Foundational Level in Programming & Data Science",
-    "Infosys Springboard: Python Programming -01"
-]
+    { name: "IBM: Getting Started with GIT and GitHub", imageUrl: "https://placehold.co/850x1100.png", dataAiHint: "certificate ibm" },
+    { name: "IBM: Data Analysis with Python", imageUrl: "https://placehold.co/850x1100.png", dataAiHint: "certificate ibm" },
+    { name: "IBM: Machine Learning with Python", imageUrl: "https://placehold.co/850x1100.png", dataAiHint: "certificate ibm" },
+    { name: "IITM: Foundational Level in Programming & Data Science", imageUrl: "https://placehold.co/850x1100.png", dataAiHint: "certificate iitm" },
+    { name: "Infosys Springboard: Python Programming -01", imageUrl: "https://placehold.co/850x1100.png", dataAiHint: "certificate infosys" },
+];
 
 
 export default function AboutSection() {
+  const [selectedCert, setSelectedCert] = useState<(typeof certifications)[0] | null>(null);
+
   return (
     <section id="about" className="py-16 md:py-24 bg-secondary dark:bg-card">
       <div className="container px-4 md:px-6">
@@ -91,11 +99,39 @@ export default function AboutSection() {
             </h3>
             <Card className="shadow-lg">
                 <CardContent className="p-6">
-                    <ul className="list-disc list-inside space-y-2">
-                        {certifications.map((cert, index) => (
-                            <li key={index} className="text-muted-foreground">{cert}</li>
-                        ))}
-                    </ul>
+                    <Dialog open={!!selectedCert} onOpenChange={(isOpen) => !isOpen && setSelectedCert(null)}>
+                      <ul className="list-disc list-inside space-y-2">
+                          {certifications.map((cert, index) => (
+                            <li key={index}>
+                                <DialogTrigger asChild>
+                                  <Button 
+                                    variant="link" 
+                                    className="p-0 h-auto text-muted-foreground hover:text-primary text-left"
+                                    onClick={() => setSelectedCert(cert)}
+                                  >
+                                    {cert.name}
+                                  </Button>
+                                </DialogTrigger>
+                            </li>
+                          ))}
+                      </ul>
+                      {selectedCert && (
+                        <DialogContent className="max-w-3xl">
+                          <DialogHeader>
+                            <DialogTitle className="font-headline">{selectedCert.name}</DialogTitle>
+                          </DialogHeader>
+                          <div className="relative aspect-[8.5/11] w-full mt-4">
+                            <Image 
+                              src={selectedCert.imageUrl} 
+                              alt={`Certificate for ${selectedCert.name}`} 
+                              layout="fill"
+                              objectFit="contain"
+                              data-ai-hint={selectedCert.dataAiHint}
+                            />
+                          </div>
+                        </DialogContent>
+                      )}
+                    </Dialog>
                 </CardContent>
             </Card>
           </div>
